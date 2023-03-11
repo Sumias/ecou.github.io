@@ -1,9 +1,40 @@
+<html>
 <head>
 	<link rel="stylesheet" href="Hack.css">
     <meta charset="utf-8" />
-    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[YOUR_BING_MAPS_KEY]' async defer></script>
+    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=An4uEBHK3WXHb0jq_hEiM8rrGDq8ai-sz8YmC9POcHvAWbNYzk2wgf_LJhgzZ2MQ' async defer>
+	</script>
+
+	 <script type='text/javascript'>
+		var map, pin;
+		
+		function GetMap()
+		{
+			var map = new Microsoft.Maps.Map('#myMap');
+	
+		}
+	</script>
+
+
+	<div id="myMap" style='position:relative;width:600px;height:400px;'></div>
+	<script>
+		var x = document.getElementById("demo");
+		function getLocation() {
+		  if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition);
+		  } else {
+			x.innerHTML = "Geolocation is not supported by this browser.";
+		  }
+		}
+		
+		function showPosition(position) {
+		  x.innerHTML = "Latitude: " + position.coords.latitude +
+		  "<br>Longitude: " + position.coords.longitude;
+		}
+	</script>
 </head>
 <body>
+
 	<div class="banner">
 		<div class="navbar">
             
@@ -19,4 +50,8 @@
 		<h1> There is no Planet B.</h1>
 		<p> View the map and show up for our Earth </p>
 	</div>
+	<div id="demo">
+		<p>Demo goes here</p>
+	</div>
 </body>
+</html>
